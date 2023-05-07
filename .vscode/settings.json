@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "HOL3.C": "cpp",
+        "CALC_T.C": "cpp",
+        "GRAFIC.C": "cpp",
+        "CALC_Q.C": "cpp",
+        "TOPLS.C": "cpp"
+    }
+}
