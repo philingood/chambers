@@ -5,6 +5,9 @@
         "CALC_T.C": "cpp",
         "GRAFIC.C": "cpp",
         "CALC_Q.C": "cpp",
-        "TOPLS.C": "cpp"
-    }
+        "TOPLS.C": "cpp",
+        "HOL_PRN.C": "cpp",
+        "STDLIB.H": "cpp"
+    },
+    
 }

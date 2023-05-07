@@ -2,14 +2,17 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe сборка активного файла",
-            "command": "C:\\Program Files\\Simcenter\\2021.2\\Amesim\\sys\\mingw32\\bin\\g++.exe",
+            "label": "C/C++: gcc сборка активного файла",
+            "command": "/usr/bin/gcc",
             "args": [
+                "-fblocks",
                 "-fdiagnostics-color=always",
+                "-I",
+                "${workspaceFolder}/INCLUDE/",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -21,26 +24,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Задача создана отладчиком."
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: gcc.exe сборка активного файла",
-            "command": "C:\\Program Files\\Simcenter\\2021.2\\Amesim\\sys\\mingw32\\bin\\gcc.exe",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
             "detail": "Задача создана отладчиком."
         }
     ],

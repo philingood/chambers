@@ -7,7 +7,7 @@
 #include <conio.h>
 #include <stdarg.h>
 
-#include <graphics.h> 
+// #include <graphics.h>
 
 #include "hol3.h"
 
@@ -94,6 +94,7 @@ double maxT[]={		/* максимально допустимые температуры */
 extern double prec;
 
 void main(int argc, char ** argv)
+// int main(int argc, char ** argv)
 {
 void read_data(void);
 int calc_T(void);
@@ -102,8 +103,7 @@ int iter(void);
 int ii,iuo;
 char bf[100];
 
-// cprintf(" Программа расчета наружного проточного охлаждения ЖРД\n\r"
-printf(" Программа расчета наружного проточного охлаждения ЖРД\n\r"
+cprintf(" Программа расчета наружного проточного охлаждения ЖРД\n\r"
        " ХОЛОД - 3 PC. (c) Затонский А.В. МГТУ Э-1 %s\n\r",__DATE__);
 /*
 cprintf(" ЭТА ВЕРСИЯ ПРЕДНАЗНАЧЕНА ДЛЯ ОТРАБОТКИ АЛГОРИТМА И ПРОВЕРКИ\n\r"
@@ -140,13 +140,11 @@ if(argc>2)
 		}
 	}
 if((fin=fopen(bf,"rt"))==NULL){
-	// cprintf(" Не могу открыть файл данных %s\n\r",bf);
-	printf(" Не могу открыть файл данных %s\n\r",bf);
+	cprintf(" Не могу открыть файл данных %s\n\r",bf);
 	return;
 	}
 if((fout=fopen("holod3.rez","wt"))==NULL){
-	// cprintf(" Не могу открыть файл результатов: вывод будет\n\r"
-	printf(" Не могу открыть файл результатов: вывод будет\n\r"
+	cprintf(" Не могу открыть файл результатов: вывод будет\n\r"
 	       " роизводиться на экран. Нажмите ENTER для про-\n\r"
 	       " должения или ESC для прерывания программы\n\r");
 	if(getchar()==27)
@@ -164,27 +162,23 @@ fclose(fin);
 calc_preQ();
 calc_geom();
 for(iuo=uo,uo=0;uo<iuo;uo++){
-	// cprintf("Расчет участка охлаждения # %d ",uo+1);
-	printf("Расчет участка охлаждения # %d ",uo+1);
+	cprintf("Расчет участка охлаждения # %d ",uo+1);
 	ii=calc_T();
-	// cprintf("\r");
-	printf("\r");
+	cprintf("\r");
 	fprintf(fout," Расчет сечения %d\n\r",uo+1);
 	prec *= 100;
 	sprintf(bf," Для достижения %f%%-ной точности понадобилось %d итерации.\n\r",prec,ii);
 	fprintf(fout,"\n%s\n",bf);
-	// cprintf("%s",bf);
-	printf("%s",bf);
+	cprintf("%s",bf);
 	}
 print_data();
-// cprintf(" Нажмите любую клавишу для просмотра графиков или \n\r"
-printf(" Нажмите любую клавишу для просмотра графиков или \n\r"
+cprintf(" Нажмите любую клавишу для просмотра графиков или \n\r"
        "               ESC для отмены...\n\r",prec,ii);
 fclose(fout);
-if(getch()!=27){
-	graph();
-	clg();
-	}
+// if(getch()!=27){
+// 	graph();
+// 	clg();
+// 	}
 }
 
 void error(int mode, int i,...)
@@ -240,8 +234,7 @@ vsprintf(&bf[strlen(bf)],err_arr[i-1], ap);
 va_end(ap);
 strcat(bf,"!");
 fprintf(fout,"%s\n",bf);
-// cprintf("\n\r%s\n\r",bf);
-printf("\n\r%s\n\r",bf);
+cprintf("\n\r%s\n\r",bf);
 if(mode)
 	exit(-(i-1));
 }
@@ -250,7 +243,7 @@ void read_data(void)
 {
 int ii,iuo,jj, is_del, nsch;
 double tk1;
-int alloc_memory(int);
+int alloc_memoryy(int);
 
 char * toplpara[]={		/* названия топливных пар */
 /*01*/	"АК + керосин Т-1",
@@ -351,7 +344,7 @@ if(is_del!=0 && is_del!=1)
 	error(1,21);
 fprintf(fout," Задаются %s сечений\n\n",((is_del)?"отрезки":"координаты"));
 
-if(!alloc_memory(0))
+if(!alloc_memoryy(0))
 	error(1,13);
 
 Dkr=1e8;
@@ -397,12 +390,11 @@ uo=getINT();
 iuo=uo;
 fprintf(fout," Количество участков охлаждения %d\n",uo);
 
-if(!alloc_memory(1))
+if(!alloc_memoryy(1))
 	error(1,13);
 
 for(uo=0;uo<iuo;uo++){
 
-//   fprintf(fout," Параметры %sго участка:\n",numbers[max(uo,10)]);
   fprintf(fout," Параметры %sго участка:\n",numbers[max(uo,10)]);
 
 

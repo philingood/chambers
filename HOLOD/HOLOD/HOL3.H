@@ -96,4 +96,10 @@ double sp(int pts, double * sx, double * sy, double * css, double x1);
 int cs(int pts, double * sx, double * sy, double * css);
 double cs_sp(int n, double * x, double * y, double x1);
 double lin(int pts, double * sx, double * sy, double x1);
-
+
+#ifndef max
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+#endif
+#ifndef min
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#endif
