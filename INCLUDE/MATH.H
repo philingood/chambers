@@ -45,6 +45,8 @@ double  _Cdecl sqrt  (double __x);
 double  _Cdecl tan   (double __x);
 double  _Cdecl tanh  (double __x);
 
+double  _Cdecl hypot (double __x, double __y);
+
 long double _Cdecl acosl  (long double __x);
 long double _Cdecl asinl  (long double __x);
 long double _Cdecl atan2l (long double __x, long double __y);

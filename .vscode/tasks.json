@@ -11,8 +11,10 @@
                 "${workspaceFolder}/INCLUDE/",
                 "-g",
                 "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                // "-o",
+                // "${fileDirname}/${fileBasenameNoExtension}.o"
+                // "${fileDirname}/${fileBasenameNoExtension}",
+                "-v"
             ],
             "options": {
                 "cwd": "${fileDirname}"

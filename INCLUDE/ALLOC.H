@@ -67,9 +67,10 @@ extern "C" {
 #endif
 
 void  *_Cdecl calloc(size_t __nitems, size_t __size);
-void   _Cdecl free(void *__block);
+// void   _Cdecl free(void *__block);
+void   _Cdecl free(void *ptr);
 void  *_Cdecl malloc(size_t __size);
-void  *_Cdecl realloc(void *__block, size_t __size);
+// void  *_Cdecl realloc(void *__block, size_t __size);
 
 int    _Cdecl brk(void *__addr);
 void  *_Cdecl sbrk(int __incr);

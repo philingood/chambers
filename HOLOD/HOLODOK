@@ -1,3 +1,0 @@
-#!/bin/bash
-cd "${0%/*}"
-./DOSBox/dosbox.app/Contents/MacOS/DOSBox HOLOD/start.bat

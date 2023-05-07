@@ -7,7 +7,8 @@
         "CALC_Q.C": "cpp",
         "TOPLS.C": "cpp",
         "HOL_PRN.C": "cpp",
-        "STDLIB.H": "cpp"
+        "STDLIB.H": "cpp",
+        "HOL_MATH.C": "cpp"
     },
     
 }
