@@ -1,4 +1,4 @@
-#include <alloc.h>
+// #include <alloc.h>
 #include <math.h>
 
 #include "hol3.h"

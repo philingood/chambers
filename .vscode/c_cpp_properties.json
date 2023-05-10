@@ -17,7 +17,8 @@
                 "path": [
                     "${workspaceFolder}/INCLUDE/"
                 ]
-            }
+            },
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

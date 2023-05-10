@@ -98,9 +98,16 @@ int cs(int pts, double * sx, double * sy, double * css);
 double cs_sp(int n, double * x, double * y, double x1);
 double lin(int pts, double * sx, double * sy, double x1);
 
+void read_data(void);
+int calc_T(void);
+void calc_geom(void),calc_preQ(void),print_data(void);
+int iter(void);
+
 #ifndef max
 #define max(a, b) (((a) > (b)) ? (a) : (b))
 #endif
 #ifndef min
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 #endif
+
+#include <cstdlib>

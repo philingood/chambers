@@ -6,14 +6,15 @@
 #include <string.h>
 #include <conio.h>
 #include <stdarg.h>
+#include <string.h>
 
 // #include <graphics.h>
 
-#include "TOPLS.C"
-#include "CALC_T.C"
-#include "CALC_Q.C"
-#include "HOL_MATH.C"
-#include "HOL_PRN.C"
+// #include "TOPLS.C"
+// #include "CALC_T.C"
+// #include "CALC_Q.C"
+// #include "HOL_MATH.C"
+// #include "HOL_PRN.C"
 #include "hol3.h"
 // #include "grafic.c"
 
@@ -102,10 +103,6 @@ extern double prec;
 // void main(int argc, char ** argv)
 int main(int argc, char ** argv)
 {
-void read_data(void);
-int calc_T(void);
-void calc_geom(void),calc_preQ(void),print_data(void);
-int iter(void);
 int ii,iuo;
 char bf[100];
 
@@ -124,7 +121,7 @@ if(argc<2){
 	return;
 */
 	printf(" Имя файла с данными: ");
-	gets(bf);
+	gets_s(bf, 100);
 	printf(" Максимальное количество итераций: ");
 	scanf("%d",&maxiter);
 	}
