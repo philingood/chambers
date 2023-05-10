@@ -11,9 +11,10 @@
                 "${workspaceFolder}/INCLUDE/",
                 "-g",
                 "${file}",
-                // "-o",
-                // "${fileDirname}/${fileBasenameNoExtension}.o"
-                // "${fileDirname}/${fileBasenameNoExtension}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                // "-lc",
+                "-w",
                 "-v"
             ],
             "options": {

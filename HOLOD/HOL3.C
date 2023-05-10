@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <process.h>
+// #include <process.h>
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
 #include <string.h>
-#include <conio.h>
+// #include <conio.h>
 #include <stdarg.h>
 #include <string.h>
 
@@ -106,10 +106,10 @@ int main(int argc, char ** argv)
 int ii,iuo;
 char bf[100];
 
-cprintf(" Программа расчета наружного проточного охлаждения ЖРД\n\r"
+printf(" Программа расчета наружного проточного охлаждения ЖРД\n\r"
        " ХОЛОД - 3 PC. (c) Затонский А.В. МГТУ Э-1 %s\n\r",__DATE__);
 /*
-cprintf(" ЭТА ВЕРСИЯ ПРЕДНАЗНАЧЕНА ДЛЯ ОТРАБОТКИ АЛГОРИТМА И ПРОВЕРКИ\n\r"
+printf(" ЭТА ВЕРСИЯ ПРЕДНАЗНАЧЕНА ДЛЯ ОТРАБОТКИ АЛГОРИТМА И ПРОВЕРКИ\n\r"
        " БАЗЫ ДАННЫХ ТЕПЛОФИЗИЧЕСКИХ СВОЙСТВ КОМПОНЕНТОВ ТОПЛИВА.\n\r"
        " РЕКОМЕНДУЕТСЯ ПОЛЬЗОВАТЬСЯ С ОСТОРОЖНОСТЬЮ И СООБЩИТЬ\n\r"
        " О ВСЕХ ЗАМЕЧЕННЫХ НЕДОСТАТКАХ.\n\r");
@@ -117,11 +117,11 @@ cprintf(" ЭТА ВЕРСИЯ ПРЕДНАЗНАЧЕНА ДЛЯ ОТРАБОТК
 
 if(argc<2){
 /*
-	cprintf(" Вызов: HOLOD3 <имя файла данных> <max итераций>\n\r");
+	printf(" Вызов: HOLOD3 <имя файла данных> <max итераций>\n\r");
 	return;
 */
 	printf(" Имя файла с данными: ");
-	gets_s(bf, 100);
+	gets(bf);
 	printf(" Максимальное количество итераций: ");
 	scanf("%d",&maxiter);
 	}
@@ -143,11 +143,11 @@ if(argc>2)
 		}
 	}
 if((fin=fopen(bf,"rt"))==NULL){
-	cprintf(" Не могу открыть файл данных %s\n\r",bf);
+	printf(" Не могу открыть файл данных %s\n\r",bf);
 	return 0;
 	}
 if((fout=fopen("holod3.rez","wt"))==NULL){
-	cprintf(" Не могу открыть файл результатов: вывод будет\n\r"
+	printf(" Не могу открыть файл результатов: вывод будет\n\r"
 	       " роизводиться на экран. Нажмите ENTER для про-\n\r"
 	       " должения или ESC для прерывания программы\n\r");
 	if(getchar()==27)
@@ -165,17 +165,17 @@ fclose(fin);
 calc_preQ();
 calc_geom();
 for(iuo=uo,uo=0;uo<iuo;uo++){
-	cprintf("Расчет участка охлаждения # %d ",uo+1);
+	printf("Расчет участка охлаждения # %d ",uo+1);
 	ii=calc_T();
-	cprintf("\r");
+	printf("\r");
 	fprintf(fout," Расчет сечения %d\n\r",uo+1);
 	prec *= 100;
 	sprintf(bf," Для достижения %f%%-ной точности понадобилось %d итерации.\n\r",prec,ii);
 	fprintf(fout,"\n%s\n",bf);
-	cprintf("%s",bf);
+	printf("%s",bf);
 	}
 print_data();
-cprintf(" Нажмите любую клавишу для просмотра графиков или \n\r"
+printf(" Нажмите любую клавишу для просмотра графиков или \n\r"
        "               ESC для отмены...\n\r",prec,ii);
 fclose(fout);
 // if(getch()!=27){
@@ -238,7 +238,7 @@ vsprintf(&bf[strlen(bf)],err_arr[i-1], ap);
 va_end(ap);
 strcat(bf,"!");
 fprintf(fout,"%s\n",bf);
-cprintf("\n\r%s\n\r",bf);
+printf("\n\r%s\n\r",bf);
 if(mode)
 	exit(-(i-1));
 }
