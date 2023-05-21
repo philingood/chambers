@@ -11,4 +11,5 @@ HOLOD-win64/HOL3.C
 HOLOD-win64/TOPLS.C   
 )
 
-target_compile_options(holod-win64 PRIVATE "-Wall" "-finput-charset=UTF-8" "-fexec-charset=CP1251")
+# target_compile_options(holod-win64 PRIVATE "-Wall" "-finput-charset=UTF-8" "-fexec-charset=CP1251")
+# target_compile_options(holod-win64 PRIVATE "-Wall" "-fexec-charset=UTF-8")
