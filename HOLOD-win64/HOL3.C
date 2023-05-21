@@ -189,6 +189,7 @@ int main(int argc, char **argv)
 	// 	   "               ESC для отмены...\n\r",
 	// 	   prec, ii);
 	fclose(fout);
+	system("pause");
 	// if(getch()!=27){
 	// 	graph();
 	// 	clg();
