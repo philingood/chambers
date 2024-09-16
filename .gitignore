@@ -1,5 +1,6 @@
-build
+build/
 .vscode
-*.7z*
-*.zip*
-*.exe*
+**.7z*
+**.zip*
+**.exe*
+**.DS_Store
