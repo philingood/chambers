@@ -1,5 +1,5 @@
 // #include <graphics.h>
-#include <conio.h>
+// #include <conio.h>
 
 #include "hol3.h"
 
@@ -107,6 +107,6 @@ void graph(void)
 
 void clg(void)
 {
-  getch();
+  // getch();
   // closegraph();
 }

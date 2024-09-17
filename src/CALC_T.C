@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
-#include <conio.h>
+// #include <conio.h>
 
 #include "hol3.h"
 
@@ -42,7 +42,7 @@ for(it=0;it<maxiter && Iter;it++)
     {
     jj = ii;
     ii += dk;
-    cprintf("И%2d T%2d\b\b\b\b\b\b\b",it+1,ii+1);
+    printf("И%2d T%2d\b\b\b\b\b\b\b",it+1,ii+1);
          /* расчет подогрева */
     Qsr=(Q[ii]+Ql[ii]+Q[jj]+Ql[jj])*0.5;
         /* средний тепловой поток */
@@ -86,7 +86,7 @@ for(it=0;it<maxiter && Iter;it++)
 			/* от жидкости в стенку во всех сечениях */
      {
       ii += dk;
-      cprintf("И%2d A%2d\b\b\b\b\b\b\b",it+1,ii+1);
+      printf("И%2d A%2d\b\b\b\b\b\b\b",it+1,ii+1);
       Qsr = Q[ii]+Ql[ii];
       recalc_Alp(ii,Qsr,dk);
      } while (ii!=tox);
@@ -96,7 +96,7 @@ for(it=0;it<maxiter && Iter;it++)
    do        /* вычисляем все тепловые потоки во всех сечениях */
      {
 	ii += dk;
-	cprintf("И%2d Q%2d\b\b\b\b\b\b\b",it+1,ii+1);
+	printf("И%2d Q%2d\b\b\b\b\b\b\b",it+1,ii+1);
 	Q0=Q[ii];
 	if(Q0==0)
 		 Q0 = 1e3;       /* для исключения деления на 0 */

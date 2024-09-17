@@ -1,5 +1,6 @@
 // #include <alloc.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include "hol3.h"
 
